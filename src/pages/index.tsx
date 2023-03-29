@@ -6,6 +6,9 @@ import Link from "next/link";
 import Grid from "@/ui/Grid";
 import Button from "@/ui/Button";
 import ButtonText from "@/ui/ButtonText";
+import { MdCropFree } from "react-icons/md";
+import { HiLockClosed } from "react-icons/hi";
+import { IoIosExpand } from "react-icons/Io";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -108,8 +111,8 @@ export default function Home() {
                     Valide o QR Code
                   </h1>
                   <h3 className="text-xl sm:text-2xl">
-                    Os voluntários podem validar o QR Code dos beneficiários e
-                    tornar essa troca mais segura
+                    Validar a autênticidade de um beneficiário nunca foi tão
+                    simples!
                   </h3>
                 </aside>
 
@@ -120,6 +123,99 @@ export default function Home() {
                   />
                 </div>
               </div>
+            </div>
+          </Grid>
+
+          <Grid>
+            <div className="bg-[#fff] p-6 rounded-2xl flex flex-col gap-4 justify-between overflow-hidden max-h-[90vh] mt-5 pb-0">
+              <div>
+                <h1 className="font-semibold text-secondary lg:text-[48px]  md:text-[40px] ">
+                  Organizações{" "}
+                </h1>
+
+                <h3 className="text-xl sm:text-2xl">
+                  Beneficiários podem criar organizações
+                </h3>
+              </div>
+
+              <div className="flex justify-between max-w-full items-center gap-5 pt-5 overflow-x-scroll ">
+                <img
+                  className="max-w-[33%] min-w-[300px]"
+                  src="/img/organization1.png"
+                />
+                <img
+                  className="max-w-[33%] min-w-[300px]"
+                  src="/img/organization2.png"
+                />
+                <img
+                  className="max-w-[33%] min-w-[300px]"
+                  src="/img/organization3.png"
+                />
+              </div>
+            </div>
+          </Grid>
+        </div>
+
+        <div className="bg-[#000000] py-12 md:py-20 lg:py-32">
+          <Grid>
+            <h1 className="sm:text-[48px] md:text-[64px] text-slate-50 p-4 text-center">
+              Doações movem o VoluntEasy. Unidos, transformamos realidades!
+            </h1>
+
+            <div className="mt-5 bg-[#151516] p-6 rounded-2xl flex flex-col">
+              <h1 className="text-slate-50 ">Por que doar?</h1>
+              <section className="flex flex-col gap-8 md:max-w-[80%] mt-8">
+                <div className="flex items-center gap-5">
+                  <MdCropFree size={120} color="#007AFF" />
+                  <aside>
+                    <h3 className="text-slate-50">
+                      Serviço <span className="text-blue">gratuito</span> para
+                      todos
+                    </h3>
+                    <p className="text-[#86868B]">
+                      O VoluntEasy é gratuito para todos, conectando
+                      organizações, voluntários e beneficiários. As doações
+                      ajudam a manter nosso aplicativo acessível, sem custos
+                      para os usuários, garantindo a inclusão de todos.
+                    </p>
+                  </aside>
+                </div>
+                <div className="flex items-center gap-5">
+                  <HiLockClosed size={120} color="#007AFF" />
+                  <aside>
+                    <h3 className="text-slate-50">
+                      <span className="text-blue">Segurança</span> e{" "}
+                      <span className="text-blue">qualidade </span>
+                      garatidas
+                    </h3>
+                    <p className="text-[#86868B]">
+                      As doações asseguram servidores confiáveis e eficientes,
+                      proporcionando um serviço de qualidade e protegendo os
+                      dados dos usuários. O dinheiro arrecadado será usado
+                      exclusivamente para manter os servidores, não para pagar
+                      desenvolvedores.
+                    </p>
+                  </aside>
+                </div>
+                <div className="flex items-center gap-5">
+                  <IoIosExpand size={120} color="#007AFF" />
+                  <aside>
+                    <h3 className="text-slate-50">
+                      <span className="text-blue">Expansão</span> e
+                      aprimoramento contínuo
+                    </h3>
+                    <p className="text-[#86868B]">
+                      Com o apoio financeiro, podemos investir na expansão e
+                      melhoria do VoluntEasy, alcançando mais pessoas e
+                      comunidades, ampliando o impacto da solidariedade e
+                      transformando ainda mais vidas.
+                    </p>
+                  </aside>
+                </div>
+              </section>
+              <Button className="bg-[#007AFF] w-[300px] max-w-[300px] mx-auto mt-[50px]">
+                Fazer uma doação
+              </Button>
             </div>
           </Grid>
         </div>
