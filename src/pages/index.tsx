@@ -8,7 +8,7 @@ import Button from "@/ui/Button";
 import ButtonText from "@/ui/ButtonText";
 import { MdCropFree } from "react-icons/md";
 import { HiLockClosed } from "react-icons/hi";
-import { IoIosExpand } from "react-icons/Io";
+import { IoIosExpand } from "react-icons/io";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,8 +36,8 @@ export default function Home() {
             boxShadow:
               "0px 0px 0px 1px rgba(53, 72, 91, 0.14), 0px 3px 2px rgba(0, 0, 0, 0.04), 0px 7px 7px rgba(0, 0, 0, 0.03);",
           }}
-          className="fixed top-0 left-0 right-0 backdrop-blur-md gap-4
-
+          className="fixed top-0 left-0 right-0  gap-4
+          backdrop-blur-md
           "
         >
           <div className="flex items-center justify-between p-2 max-w-screen-xl m-auto">
