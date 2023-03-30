@@ -12,7 +12,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`rounded-[10px] px-3 py-[10px] flex gap-2 items-center justify-center  text-white cursor-pointer ${className}`}
+      className={`rounded-[10px] px-3 py-[10px] flex gap-2 items-center justify-center text-white cursor-pointer hover:brightness-75 transition-all duration-500 ${className}`}
     >
       {children}
       {rightIcon && rightIcon()}

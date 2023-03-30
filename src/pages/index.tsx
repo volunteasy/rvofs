@@ -9,10 +9,37 @@ import ButtonText from "@/ui/ButtonText";
 import { MdCropFree, MdDownloading } from "react-icons/md";
 import { HiLockClosed } from "react-icons/hi";
 import { IoIosExpand } from "react-icons/io";
+import { gsap, TimelineLite } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const darkBackground = useRef(null);
+
+  useEffect(() => {
+    gsap.to("#navBar", {
+      backgroundColor: "rgba(0, 0, 0, 0.7)",
+      scrollTrigger: {
+        trigger: "#darkBackground",
+        start: "top top",
+        end: "+=50",
+        scrub: 1,
+      },
+    });
+
+    gsap.to("#navtext", {
+      color: "white",
+      scrollTrigger: {
+        trigger: "#darkBackground",
+        start: "top top",
+        end: "+=50",
+        scrub: 1,
+      },
+    });
+  }, []);
   return (
     <>
       <Head>
@@ -35,6 +62,7 @@ export default function Home() {
       </Head>
       <main>
         <nav
+          id="navBar"
           style={{
             background: "rgba(255, 255, 255, 0.7)",
             boxShadow:
@@ -45,20 +73,26 @@ export default function Home() {
           "
         >
           <div className="flex items-center justify-between p-2 max-w-screen-xl m-auto">
-            <img src="/volunteasyBareIcon.svg" />
+            <img
+              alt="Ícone depcom"
+              src="/volunteasyBareIcon.svg"
+              className="w-[35px] md:w-[45px]"
+            />
 
             <div className="hidden md:flex gap-4">
-              <Link href="#" className="truncate">
+              <Link href="#" className="truncate" id="navtext">
                 Como funciona?
               </Link>
-              <Link href="#" className="truncate">
+              <Link href="#" className="truncate" id="navtext">
                 Quem somos nós?
               </Link>
-              <Link href="#" className="truncate">
+              <Link href="#" className="truncate" id="navtext">
                 Fazer uma doação
               </Link>
             </div>
-            <Link href="#">Entrar</Link>
+            <Link href="#" id="navtext">
+              Entrar
+            </Link>
           </div>
         </nav>
         <Grid>
@@ -173,7 +207,11 @@ export default function Home() {
           </Grid>
         </div>
 
-        <div className="bg-[#000000] py-12 md:py-20 lg:py-32">
+        <div
+          id="darkBackground"
+          ref={darkBackground}
+          className="backgroundDark bg-[#000000] py-12 md:py-20 lg:py-32"
+        >
           <Grid>
             <h1 className="sm:text-[48px] md:text-[64px] text-slate-50 p-4 text-center">
               Doações movem o VoluntEasy. Unidos, transformamos realidades!
