@@ -29,9 +29,45 @@ export default function Home() {
         scrub: 1,
       },
     });
+    gsap.to("#darkBackground", {
+      backgroundColor: "rgba(0, 0, 0)",
+      scrollTrigger: {
+        trigger: "#darkBackground",
+        start: "top 50%",
+        end: "+=300",
+        scrub: 1,
+      },
+    });
+    gsap.to("#donationBackground", {
+      backgroundColor: "#151516",
+      scrollTrigger: {
+        trigger: "#darkBackground",
+        start: "top 50%",
+        end: "+=300",
+        scrub: 1,
+      },
+    });
+    gsap.to("#titleDonation", {
+      color: "#F5F5F7",
+      scrollTrigger: {
+        trigger: "#darkBackground",
+        start: "top 50%",
+        end: "+=300",
+        scrub: 1,
+      },
+    });
+    gsap.to("#darkBackground", {
+      backgroundColor: "rgba(0, 0, 0)",
+      scrollTrigger: {
+        trigger: "#darkBackground",
+        start: "top 50%",
+        end: "+=300",
+        scrub: 1,
+      },
+    });
 
     gsap.to("#navtext", {
-      color: "white",
+      color: "#ffffff99",
       scrollTrigger: {
         trigger: "#darkBackground",
         start: "top top",
@@ -210,15 +246,23 @@ export default function Home() {
         <div
           id="darkBackground"
           ref={darkBackground}
-          className="backgroundDark bg-[#000000] py-12 md:py-20 lg:py-32"
+          className="backgroundDark bg-[#F5F5F7] py-12 md:py-20 lg:py-32"
         >
           <Grid>
-            <h1 className="sm:text-[48px] md:text-[64px] text-slate-50 p-4 text-center">
+            <h1
+              className="sm:text-[48px] md:text-[64px] text-black p-4 text-center"
+              id="titleDonation"
+            >
               Doações movem o VoluntEasy. Unidos, transformamos realidades!
             </h1>
 
-            <div className="mt-5 bg-[#151516] p-6 rounded-2xl flex flex-col">
-              <h1 className="text-slate-50 ">Por que doar?</h1>
+            <div
+              id="donationBackground"
+              className="mt-5 bg-[#fff] p-6 rounded-2xl flex flex-col"
+            >
+              <h1 className="text-black" id="titleDonation">
+                Por que doar?
+              </h1>
               <section className="flex flex-col gap-8 md:max-w-[80%] mt-8">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
                   <img src="/freeIcon.svg" className="w-[43px] min-w-[43px]" />
