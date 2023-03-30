@@ -102,7 +102,7 @@ export default function Home() {
           style={{
             background: "rgba(255, 255, 255, 0.7)",
             boxShadow:
-              "0px 0px 0px 1px rgba(53, 72, 91, 0.14), 0px 3px 2px rgba(0, 0, 0, 0.04), 0px 7px 7px rgba(0, 0, 0, 0.03);",
+              "0px 0px 0px 1px rgba(53, 72, 91, 0.14), 0px 3px 2px rgba(0, 0, 0, 0.04), 0px 7px 7px rgba(0, 0, 0, 0.03)",
           }}
           className="fixed top-0 left-0 right-0  gap-4
           backdrop-blur-md
@@ -268,7 +268,7 @@ export default function Home() {
                   <img src="/freeIcon.svg" className="w-[43px] min-w-[43px]" />
 
                   <aside>
-                    <h3 className="text-slate-50">
+                    <h3 className="text-black" id="titleDonation">
                       Serviço <span className="text-blue">gratuito</span> para
                       todos
                     </h3>
