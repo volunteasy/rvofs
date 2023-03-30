@@ -29,13 +29,14 @@ export default function Home() {
         scrub: 1,
       },
     });
-    gsap.to("#darkBackground", {
-      backgroundColor: "rgba(0, 0, 0)",
+    gsap.to(["#darkBackground", "#body"], {
+      background: "rgba(0, 0, 0)",
       scrollTrigger: {
         trigger: "#darkBackground",
         start: "top 50%",
         end: "+=300",
         scrub: 1,
+        markers: true,
       },
     });
     gsap.to("#donationBackground", {
