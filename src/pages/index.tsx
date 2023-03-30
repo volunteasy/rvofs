@@ -36,7 +36,6 @@ export default function Home() {
         start: "top 50%",
         end: "+=300",
         scrub: 1,
-        markers: true,
       },
     });
     gsap.to("#donationBackground", {
