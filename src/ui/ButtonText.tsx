@@ -2,8 +2,12 @@ import React, { ButtonHTMLAttributes } from "react";
 
 interface ButtonTextProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
-  color?: "primary" | "secondary";
+  rightIcon?: () => React.ReactNode;
 }
-export default function ButtonText({ children }: ButtonTextProps) {
-  return <button className=" text-primary cursor-pointer ">{children}</button>;
+export default function ButtonText({ children, rightIcon }: ButtonTextProps) {
+  return (
+    <button className=" text-primary cursor-pointer flex gap-2 items-center">
+      {children} {rightIcon && rightIcon()}
+    </button>
+  );
 }

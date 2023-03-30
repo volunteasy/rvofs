@@ -6,7 +6,7 @@ import Link from "next/link";
 import Grid from "@/ui/Grid";
 import Button from "@/ui/Button";
 import ButtonText from "@/ui/ButtonText";
-import { MdCropFree } from "react-icons/md";
+import { MdCropFree, MdDownloading } from "react-icons/md";
 import { HiLockClosed } from "react-icons/hi";
 import { IoIosExpand } from "react-icons/io";
 
@@ -28,6 +28,10 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/volunteasyRoundedIcon.svg" />
+        <meta
+          property="og:image"
+          content="https://volunteasy.com.br/volunteasyIcon.jpg"
+        />
       </Head>
       <main>
         <nav
@@ -73,8 +77,21 @@ export default function Home() {
             </p>
 
             <div className="flex gap-4 mt-4">
-              <ButtonText>Download no android</ButtonText>
-              <Button>Download no IOS</Button>
+              <ButtonText
+                rightIcon={() => (
+                  <MdDownloading color="white" className="fill-primary" />
+                )}
+              >
+                Baixar no android
+              </ButtonText>
+              <Button
+                className="bg-primary"
+                rightIcon={() => (
+                  <MdDownloading color="white" className="fill-white" />
+                )}
+              >
+                Baixar no IOS
+              </Button>
             </div>
           </div>
         </Grid>
@@ -101,7 +118,7 @@ export default function Home() {
               <div className="bg-secondary p-12 rounded-2xl md:w-6/12 gap-12 flex flex-col justify-between  min-h-[60vh]">
                 <img src="/packageIcon.svg" className="ml-auto w-8/12 " />
 
-                <h1 className="sm:text-[48px] md:text-[64px] text-white p-4">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl text-white md:p-4">
                   Mais de 523 mil itens entregues
                 </h1>
               </div>
@@ -165,8 +182,9 @@ export default function Home() {
             <div className="mt-5 bg-[#151516] p-6 rounded-2xl flex flex-col">
               <h1 className="text-slate-50 ">Por que doar?</h1>
               <section className="flex flex-col gap-8 md:max-w-[80%] mt-8">
-                <div className="flex items-center gap-5">
-                  <MdCropFree size={120} color="#007AFF" />
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
+                  <img src="/freeIcon.svg" className="w-[43px] min-w-[43px]" />
+
                   <aside>
                     <h3 className="text-slate-50">
                       Serviço <span className="text-blue">gratuito</span> para
@@ -180,8 +198,10 @@ export default function Home() {
                     </p>
                   </aside>
                 </div>
-                <div className="flex items-center gap-5">
-                  <HiLockClosed size={120} color="#007AFF" />
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
+                  <img src="/lockIcon.svg" className="w-[43px] min-w-[43px]" />
+
+                  {/* <HiLockClosed size={120} color="#007AFF" /> */}
                   <aside>
                     <h3 className="text-slate-50">
                       <span className="text-blue">Segurança</span> e{" "}
@@ -197,8 +217,12 @@ export default function Home() {
                     </p>
                   </aside>
                 </div>
-                <div className="flex items-center gap-5">
-                  <IoIosExpand size={120} color="#007AFF" />
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
+                  <img
+                    src="/expandIcon.svg"
+                    className="w-[43px] min-w-[43px]"
+                  />
+                  {/* <IoIosExpand size={120} color="#007AFF" /> */}
                   <aside>
                     <h3 className="text-slate-50">
                       <span className="text-blue">Expansão</span> e
@@ -213,7 +237,7 @@ export default function Home() {
                   </aside>
                 </div>
               </section>
-              <Button className="bg-[#007AFF] w-[300px] max-w-[300px] mx-auto mt-[50px]">
+              <Button className="bg-blue w-[300px] max-w-[300px] mx-auto mt-[50px] ">
                 Fazer uma doação
               </Button>
             </div>
