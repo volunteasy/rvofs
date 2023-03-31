@@ -20,59 +20,54 @@ export default function Home() {
   const darkBackground = useRef(null);
 
   useEffect(() => {
+    const commonScrollTrigger = {
+      trigger: "#darkBackground",
+      start: "top 50%",
+      end: "+=300",
+      scrub: 1,
+    };
+
+    // animação do fundo escuro
+    gsap.fromTo(
+      ["#darkBackground", "#body"],
+      {
+        background: "rgba(255, 255, 255)",
+      },
+      {
+        background: "rgba(0, 0, 0)",
+        scrollTrigger: commonScrollTrigger,
+      }
+    );
+
+    // animação da barra de navegação
     gsap.to("#navBar", {
       backgroundColor: "rgba(0, 0, 0, 0.7)",
       scrollTrigger: {
-        trigger: "#darkBackground",
+        ...commonScrollTrigger,
         start: "top top",
         end: "+=50",
-        scrub: 1,
-      },
-    });
-    gsap.to(["#darkBackground", "#body"], {
-      background: "rgba(0, 0, 0)",
-      scrollTrigger: {
-        trigger: "#darkBackground",
-        start: "top 50%",
-        end: "+=300",
-        scrub: 1,
-      },
-    });
-    gsap.to("#donationBackground", {
-      backgroundColor: "#151516",
-      scrollTrigger: {
-        trigger: "#darkBackground",
-        start: "top 50%",
-        end: "+=300",
-        scrub: 1,
-      },
-    });
-    gsap.to("#titleDonation", {
-      color: "#F5F5F7",
-      scrollTrigger: {
-        trigger: "#darkBackground",
-        start: "top 50%",
-        end: "+=300",
-        scrub: 1,
-      },
-    });
-    gsap.to("#darkBackground", {
-      backgroundColor: "rgba(0, 0, 0)",
-      scrollTrigger: {
-        trigger: "#darkBackground",
-        start: "top 50%",
-        end: "+=300",
-        scrub: 1,
       },
     });
 
+    // animação do fundo de doação
+    gsap.to("#donationBackground", {
+      backgroundColor: "#151516",
+      scrollTrigger: commonScrollTrigger,
+    });
+
+    // animação do título da doação
+    gsap.to("#titleDonation", {
+      color: "#F5F5F7",
+      scrollTrigger: commonScrollTrigger,
+    });
+
+    // animação do texto da barra de navegação
     gsap.to("#navtext", {
       color: "#ffffff99",
       scrollTrigger: {
-        trigger: "#darkBackground",
+        ...commonScrollTrigger,
         start: "top top",
         end: "+=50",
-        scrub: 1,
       },
     });
   }, []);
@@ -96,7 +91,7 @@ export default function Home() {
           content="https://volunteasy.com.br/volunteasyIcon.jpg"
         />
       </Head>
-      <main>
+      <main className="bg-white">
         <nav
           id="navBar"
           style={{
@@ -126,8 +121,8 @@ export default function Home() {
                 Fazer uma doação
               </Link>
             </div>
-            <Link href="#" id="navtext">
-              Entrar
+            <Link href="https://github.com/volunteasy" id="navtext">
+              Colaborar
             </Link>
           </div>
         </nav>
